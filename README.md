@@ -8,3 +8,4 @@ B2: vô file index.html click chuột phải chọn Open with live server để 
     nhấn vào Go Live ở góc dưới bên phải màn hình VS Code.
 
 Link code: https://github.com/Sam141101/examination
+Link demo: https://sam141101.github.io/examination/
