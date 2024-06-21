@@ -1,0 +1,222 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  /* box-sizing: border-box; */
+}
+
+body {
+  /* font-family: Arial, sans-serif; */
+  /* line-height: 1.6; */
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+  padding: 0;
+}
+
+dl,
+ol,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li a {
+  /* color: #fff; */
+  text-decoration: none;
+  list-style: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* p {
+  margin-top: 0;
+  margin-bottom: 0;
+} */
+
+.app {
+  overflow: hidden;
+}
+.p_0 {
+  padding: 0;
+}
+.m_0 {
+  margin: 0;
+}
+.d_flex {
+  display: flex !important;
+}
+/* text */
+.color_primarily {
+  color: #6581e0;
+}
+
+.black_color {
+  color: black;
+}
+
+.color_text {
+  color: #101010;
+}
+
+.color_product_text {
+  color: #0d0d0d;
+}
+
+.color_red {
+  color: #bc5566;
+}
+
+.color_white {
+  color: white;
+}
+
+.font_size_12px {
+  font-size: 12px;
+}
+
+.font_size_14px {
+  font-size: 14px;
+}
+
+.font_size_16px {
+  font-size: 16px;
+}
+
+.font_size_18px {
+  font-size: 18px;
+}
+
+.font_size_20px {
+  font-size: 20px;
+}
+
+.font_size_22px {
+  font-size: 22px;
+}
+
+.font_size_24px {
+  font-size: 24px;
+}
+
+.text_transform_uppercase {
+  text-transform: uppercase;
+}
+
+.font-weight_300 {
+  font-weight: 300;
+}
+
+.font-weight_500 {
+  font-weight: 500;
+}
+
+.font-weight_700 {
+  font-weight: 700;
+}
+
+.text_decoration_none {
+  text-decoration: none;
+}
+
+.pt_20px {
+  padding-top: 20px;
+}
+
+.pb_20px {
+  padding-bottom: 20px;
+}
+.mt_20px {
+  margin-top: 20px;
+}
+.mb_20px {
+  margin-bottom: 20px;
+}
+
+.mb_60px {
+  margin-bottom: 60px;
+}
+
+.list_style_initial {
+  list-style: initial;
+}
+
+.outline_none {
+  outline: none;
+}
+
+.py_3px {
+  padding: 3px 0;
+}
+
+.pl_10px {
+  padding-left: 10px;
+}
+
+/* .h_slider {
+  height: 100vh;
+} */
+
+.px_20px {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.py_15px {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.h_100pt {
+  height: 100%;
+}
+
+.w-35px {
+  width: 35px;
+}
+
+.object_fit_cover {
+  object-fit: cover;
+}
+
+.object_fit_contain {
+  object-fit: contain;
+}
+
+.rohto-logo {
+  width: 130px;
+}
