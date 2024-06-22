@@ -1,44 +1,123 @@
+// let categoriesOption;
+// let listObjects;
+// let listFolders;
+// let arrow;
+
+// const textAddCategories = [
+//   {
+//     des: "folder",
+//     icon: "assets/imgs/categories/add_category/Add Video.png",
+//   },
+
+//   {
+//     des: "video",
+
+//     icon: "assets/imgs/categories/add_category/Add Photo.png",
+//   },
+
+//   {
+//     des: "video",
+
+//     icon: "assets/imgs/categories/add_category/Add Narrative.png",
+//   },
+
+//   {
+//     des: "video",
+
+//     icon: "assets/imgs/categories/add_category/Add Blog.png",
+//   },
+
+//   {
+//     des: "video",
+
+//     icon: "assets/imgs/categories/add_category/ellipsis-vertical.png",
+//   },
+// ];
+
+// const controlPanelOption = [
+//   {
+//     title: "Thêm danh mục",
+//     icon: "assets/imgs/control_panel/add.png",
+//   },
+
+//   {
+//     title: "Sắp xếp",
+//     icon: "assets/imgs/control_panel/sort.png",
+//   },
+
+//   {
+//     title: "Xem trước",
+//     icon: "assets/imgs/control_panel/preview.png",
+//   },
+// ];
+
+// const sideBarOption = [
+//   {
+//     img: "assets/imgs/sideBar/overview.png",
+//     title: "Tổng quan",
+//     link: "#",
+//   },
+
+//   {
+//     img: "assets/imgs/sideBar/manage_permission_groups.png",
+//     title: "Quản lý nhóm quyền",
+//     link: "#",
+//   },
+
+//   {
+//     img: "assets/imgs/sideBar/resource_management.png",
+//     title: "Quản lý tài nguyên",
+//     link: "#",
+//   },
+
+//   {
+//     img: "assets/imgs/sideBar/hologram.png",
+//     title: "Hologram",
+//     link: "#",
+//   },
+
+//   {
+//     img: "assets/imgs/sideBar/statistics.png",
+//     title: "Thống kê lượt xem",
+//     link: "#",
+//   },
+// ];
+
+// fetch("./data/data.json") // Đường dẫn tới file data.json
+//   .then((response) => response.json())
+//   .then((data) => {
+//     // console.log("data", data);
+//     categoriesOption = data.listCategories;
+//     listObjects = data.listObjects;
+//     listFolders = data.listFolder;
+//   });
+
+// console.log("data", listFolders);
+
 let categoriesOption;
 let listObjects;
 let listFolders;
 let arrow;
-
-fetch("./data/data.json") // Đường dẫn tới file data.json
-  .then((response) => response.json())
-  .then((data) => {
-    // console.log("data", data);
-    categoriesOption = data.listCategories;
-    listObjects = data.listObjects;
-    listFolders = data.listFolder;
-  });
 
 const textAddCategories = [
   {
     des: "folder",
     icon: "assets/imgs/categories/add_category/Add Video.png",
   },
-
   {
     des: "video",
-
     icon: "assets/imgs/categories/add_category/Add Photo.png",
   },
-
   {
     des: "video",
-
     icon: "assets/imgs/categories/add_category/Add Narrative.png",
   },
-
   {
     des: "video",
-
     icon: "assets/imgs/categories/add_category/Add Blog.png",
   },
-
   {
     des: "video",
-
     icon: "assets/imgs/categories/add_category/ellipsis-vertical.png",
   },
 ];
@@ -48,12 +127,10 @@ const controlPanelOption = [
     title: "Thêm danh mục",
     icon: "assets/imgs/control_panel/add.png",
   },
-
   {
     title: "Sắp xếp",
     icon: "assets/imgs/control_panel/sort.png",
   },
-
   {
     title: "Xem trước",
     icon: "assets/imgs/control_panel/preview.png",
@@ -66,25 +143,21 @@ const sideBarOption = [
     title: "Tổng quan",
     link: "#",
   },
-
   {
     img: "assets/imgs/sideBar/manage_permission_groups.png",
     title: "Quản lý nhóm quyền",
     link: "#",
   },
-
   {
     img: "assets/imgs/sideBar/resource_management.png",
     title: "Quản lý tài nguyên",
     link: "#",
   },
-
   {
     img: "assets/imgs/sideBar/hologram.png",
     title: "Hologram",
     link: "#",
   },
-
   {
     img: "assets/imgs/sideBar/statistics.png",
     title: "Thống kê lượt xem",
@@ -92,13 +165,31 @@ const sideBarOption = [
   },
 ];
 
-window.addEventListener("load", async function () {
-  await showSideBarOption();
-  await showControlPanelOption();
+fetch("./data/data.json") // Đường dẫn tới file data.json
+  .then((response) => response.json())
+  .then((data) => {
+    categoriesOption = data.listCategories;
+    listObjects = data.listObjects;
+    listFolders = data.listFolder;
+    console.log("data", listFolders); // Log inside the .then block
 
-  await showFolders();
-  await showCategories();
-});
+    showSideBarOption();
+    showControlPanelOption();
+
+    showFolders();
+    showCategories();
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+  });
+
+// window.addEventListener("load", async function () {
+//   await showSideBarOption();
+//   await showControlPanelOption();
+
+//   await showFolders();
+//   await showCategories();
+// });
 
 async function showSideBarOption() {
   const itemList = document.querySelector(".side_bar-option");
@@ -325,9 +416,14 @@ function createListItem(item, optionType, isCategory, isChildren) {
 }
 
 async function showFolders() {
+  // console.log("check");
+  console.log("check", listFolders);
+
   const itemList = document.querySelector(".categories");
   if (itemList) {
     if (listFolders) {
+      console.log("check", listFolders);
+
       listFolders.forEach(function (item) {
         const folder = document.createElement("div");
         folder.classList.add("folder");
